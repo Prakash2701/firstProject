@@ -6,6 +6,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <h1 style="margin-left: 50%;">War</h1>
+    <script>
+        function war() {
+
+            let input1 = parseFloat(document.getElementById("input1").value);
+            let input2 = parseFloat(document.getElementById("input2").value);
+            let input3 = parseFloat(document.getElementById("input3").value);
+
+            if (input1 == 1) {
+                alert("war")
+                document.getElementById("star").src = "./star.png";
+                alert(document.getElementById("star").src);
+            }
+        }
+    </script>
     <style>
         input {
             width: 100%;
@@ -49,12 +63,17 @@
                 <label>time :</label>
             </div>
             <div class="div2">
-                <input type="number" placeholder="Enter StarPoint"><br>
-                <input type="number" placeholder="Enter Attack percentage"><br>
-                <input type="number" placeholder="time">
+                <input type="number" placeholder="Enter StarPoint" id="input1"><br>
+                <input type="number" placeholder="Enter Attack percentage" id="input2"><br>
+                <input type="number" placeholder="time" id="input3">
             </div>
+
+            <button type="button" onclick="war()" style="margin-top: 3%;margin-left: 50%;">Submit</button>
         </div>
     </form>
+    <div style="border-style:solid ;">
+        <img id="star" height="50" src="">
+    </div>
 
 </body>
 
