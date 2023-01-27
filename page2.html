@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title style="color:chartreuse;">Clash of Clans toutnaments</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <h1 style="text-align: center;">War</h1>
+
+    <style>
+        input {
+            width: 90%;
+            padding: 8px 12px;
+            display: inline-block;
+            border: 2px solid green;
+            box-sizing: border-box;
+        }
+        
+        .div1 {
+            height: 60%;
+            margin-top: 2%;
+            color: rgb(205, 172, 172);
+            text-shadow: #44096e;
+            font-size: 150%;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body style="background-color:#333 ;">
+    <div style="height: 40%;">
+        <form>
+            <div>
+                <div class="div1">
+                    <table align="center">
+                        <tr>
+
+                            <td> <label>Star Point  : </label> </td>
+                            <td><input type="number" id="input1" placeholder="star" name="quantity" min="1" max="3" required></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td><label>Attack percentage :</label> </td>
+                            <td><input type="number" placeholder="Enter Attack percentage" id="input2"></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td><label>time :</label></td>
+                            <td><input type="number" placeholder="time" id="input3"></td>
+
+                        </tr>
+
+
+                    </table>
+                    <button type="button" onclick="war()">Submit</button>
+                </div>
+
+
+
+            </div>
+        </form>
+    </div>
+    <div style="border-style:solid ; height:40% ; min-height: 35%; text-align: center;margin-top: 10%">
+        <img id="star" height="30" src="">
+        <img id="star2" height="30" src="">
+        <img id="star3" height="30" src="">
+        <p id="attack" style="font-size: 150%; color: rgb(197, 184, 184); text-shadow: bisque;"></p>
+        <p id="time" style="font-size: 150%; color: rgb(197, 184, 184); text-shadow: bisque;"></p>
+    </div>
+
+    <script>
+        var input1 = document.getElementById("input1");
+        input1.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                war(event);
+            }
+        });
+        var input2 = document.getElementById("input2");
+        input2.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                war(event);
+            }
+        });
+        var input3 = document.getElementById("input3");
+        input3.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                war(event);
+            }
+        });
+
+        function war(event) {
+            let input1 = parseFloat(document.getElementById("input1").value);
+            let input2 = document.getElementById("input2").value;
+            let input3 = document.getElementById("input3").value;
+
+
+            if (input1 == 1) {
+
+                document.getElementById("star").src = "./star.png";
+
+            } else if (input1 == 2) {
+
+                document.getElementById("star").src = "./star.png";
+                document.getElementById("star2").src = "./star.png";
+            } else if (input1 == 3) {
+                document.getElementById("star").src = "./star.png";
+                document.getElementById("star2").src = "./star.png";
+                document.getElementById("star3").src = "./star.png";
+                document.getElementById("attack").innerHTML = input2 = 100;
+            } else {
+                alert("min 1 and max 3")
+            }
+
+            document.getElementById("attack").innerHTML = input2 + "  " + "%";
+            document.getElementById("time").innerHTML = input3 + "  " + "time";
+        }
+    </script>
+</body>
+
+</html>
