@@ -4,9 +4,99 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clan War</title>
+    <h1 style="text-align:center">Clans War</h1>
+    <style>
+        input {
+            width: 90%;
+            padding: 8px 12px;
+            display: inline-block;
+            border: 2px solid green;
+            box-sizing: border-box;
+        }
+        
+        label {
+            color: rgb(205, 172, 172);
+            text-shadow: #44096e;
+            font-size: 150%;
+        }
+        
+        .div1 {
+            width: 100%;
+            height: 60%;
+            border-style: solid;
+        }
+        
+        .div2 {
+            border-style: solid;
+            height: 20%;
+            min-height: 35%;
+            text-align: center;
+            margin-top: 10%;
+        }
+        
+        .div3 {
+            border-style: solid;
+            height: 20%;
+            min-height: 35%;
+            text-align: center;
+            margin-top: 3%;
+        }
+    </style>
 </head>
 
 <body style="background-color:#333 ;">
+    <div class="div1">
+        <table align="center">
+            <tr>
+                <td><label>Day :</label></td>
+                <td><input type="number"></td>
+            </tr>
+            <tr>
+                <td><label>Clan name or number :</label></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td><label>player number or name :</label></td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td><label>Town Hall (Level) :</label></td>
+                <td><input type="number"></td>
+            </tr>
+            <tr>
+                <td><label>War stars :</label> </td>
+                <td> <input type="number"></td>
+
+            </tr>
+            <tr>
+                <td><label>Attack percentage :</label></td>
+                <td><input type="number"></td>
+            </tr>
+            <tr>
+                <td><label>Attack time : </label></td>
+                <td><input type="number"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="button" onclick="clanwar()">Submit</button> </td>
+            </tr>
+        </table>
+    </div>
+    <div class="div2">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+
+    </div>
+    <div class="div3">
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+
 
 </body>
 
