@@ -32,7 +32,7 @@
         }
         
         label {
-            color: rgb(205, 172, 172);
+            color: rgb(24, 15, 15);
             text-shadow: #44096e;
         }
         
@@ -48,7 +48,7 @@
         
         .container {
             padding: 25px;
-            background-color: rgb(17, 44, 53);
+            background-color: rgb(77, 197, 237);
         }
     </style>
 </head>
@@ -58,13 +58,21 @@
     <form>
         <div class="container">
             <label>Username : </label>
-            <input type="text" placeholder="Enter Username" name="username" required>
+            <input type="text" id="username" placeholder="Enter Username" name="username" required>
             <label>Password : </label>
-            <input type="password" placeholder="Enter Password" name="password" required>
-            <button type="submit">Login</button>
+            <input type="password" id="password" placeholder="Enter Password" name="password" required>
+            <button type="submit" onclick="login()">Login</button>
             <button type="button" class="cancelbtn"> Cancel</button> Forgot <a href="#"> password? </a>
         </div>
     </form>
+    <script>
+        function login() {
+            let user = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            alert(user);
+            alert(password);
+        }
+    </script>
 </body>
 
 </html>

@@ -58,13 +58,21 @@
     <form>
         <div class="container">
             <label>Username : </label>
-            <input type="text" placeholder="Enter Username" name="username" required>
+            <input type="text" id="username" placeholder="Enter Username" name="username" required>
             <label>Password : </label>
-            <input type="password" placeholder="Enter Password" name="password" required>
-            <button type="submit">sign up</button>
+            <input type="password" id="password" placeholder="Enter Password" name="password" required>
+            <button type="submit" onclick="signup()">sign up</button>
             <button type="button" class="cancelbtn"> Cancel</button> Forgot <a href="#"> password? </a>
         </div>
     </form>
+    <script>
+        function signup() {
+            let user = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            alert(user);
+            alert(password);
+        }
+    </script>
 </body>
 
 </html>

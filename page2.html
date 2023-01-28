@@ -67,7 +67,7 @@
             </div>
         </form>
     </div>
-    <div style="border-style:solid ; height:40% ; min-height: 35%; text-align: center;margin-top: 10%">
+    <div style=" height:40% ; min-height: 35%; text-align: center;margin-top: 10%">
         <img id="star" height="30" src="">
         <img id="star2" height="30" src="">
         <img id="star3" height="30" src="">
@@ -115,7 +115,9 @@
                 document.getElementById("star3").src = "./star.png";
                 document.getElementById("attack").innerHTML = input2 = 100;
             } else {
-                alert("min 1 and max 3")
+
+                alert("min 1 and max 3");
+                return false;
             }
 
             document.getElementById("attack").innerHTML = input2 + "  " + "%";
