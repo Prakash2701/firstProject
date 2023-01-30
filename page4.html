@@ -27,7 +27,6 @@
         }
         
         .div2 {
-            border-style: solid;
             height: 20%;
             min-height: 35%;
             text-align: center;
@@ -35,7 +34,6 @@
         }
         
         .div3 {
-            border-style: solid;
             height: 20%;
             min-height: 35%;
             text-align: center;
@@ -102,7 +100,7 @@
             let pn = document.getElementById("pn").value;
             let clan1 = document.getElementById("clan1").value;
 
-            let time = document.getElementById("time").value;
+
 
             let th = document.getElementById("th").value;
 
@@ -132,9 +130,17 @@
                 return false;
             }
 
+            let time = document.getElementById("time").value;
+            if (time <= 3) {
+                document.getElementById("t").innerHTML = time + "  " + ":" + "time";
+
+            } else if (time > 3) {
+                alert("time input wrong")
+                return false;
+            }
+
             document.getElementById("Day").innerHTML = day + "  " + ":" + "Day";
             document.getElementById("name").innerHTML = pn + "  " + ":" + "name";
-            document.getElementById("t").innerHTML = time + "  " + ":" + "time";
 
         }
     </script>
