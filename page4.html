@@ -81,13 +81,40 @@
         </table>
     </div>
     <div class="div2">
-        <p id="Day"></p>
-        <p id="name"></p>
-        <p id="town"></p>
-        <p id="star"></p>
-        <p id="attacks"></p>
-        <p id="t"></p>
-
+        <table align="center" border="0">
+            <tr>
+                <th id="th6"></th>
+                <th id="th7"></th>
+                <th id="th1"></th>
+                <th id="th2"> </th>
+                <th id="th3"> </th>
+                <th id="th4"> </th>
+                <th id="th5"></th>
+            </tr>
+            <tr>
+                <td>
+                    <p id="Day"></p>
+                </td>
+                <td>
+                    <p id="clan2"></p>
+                </td>
+                <td>
+                    <p id="name"></p>
+                </td>
+                <td>
+                    <p id="town"></p>
+                </td>
+                <td>
+                    <p id="star"></p>
+                </td>
+                <td>
+                    <p id="attacks"></p>
+                </td>
+                <td>
+                    <p id="t"></p>
+                </td>
+            </tr>
+        </table>
     </div>
     <div class="div3">
         <p></p>
@@ -96,6 +123,13 @@
     </div>
     <script>
         function clan() {
+            document.getElementById("th6").innerHTML = "Day";
+            document.getElementById("th7").innerHTML = "Clan";
+            document.getElementById("th1").innerHTML = "Name";
+            document.getElementById("th2").innerHTML = "Town hall";
+            document.getElementById("th3").innerHTML = "WarStar";
+            document.getElementById("th4").innerHTML = "Attack";
+            document.getElementById("th5").innerHTML = "Time";
             let day = document.getElementById("day").value;
             let pn = document.getElementById("pn").value;
             let clan1 = document.getElementById("clan1").value;
@@ -105,7 +139,7 @@
             let th = document.getElementById("th").value;
 
             if (th <= 15 && th > 0) {
-                document.getElementById("town").innerHTML = th + " " + ":" + "Town Hall";
+                document.getElementById("town").innerHTML = th;
             } else if (th > 15) {
                 alert("Town hall Not")
                 return false;
@@ -114,7 +148,7 @@
             let ws = document.getElementById("ws").value;
 
             if (ws <= 3) {
-                document.getElementById("star").innerHTML = ws + " " + ":" + "WarStar";
+                document.getElementById("star").innerHTML = ws;
             } else if (ws > 3) {
                 alert("Star input Wrong")
                 return false;
@@ -124,7 +158,7 @@
 
 
             if (attack <= 100) {
-                document.getElementById("attacks").innerHTML = attack + "  " + ":" + "%";
+                document.getElementById("attacks").innerHTML = attack;
             } else if (attack > 100) {
                 alert("Attack input Wrong")
                 return false;
@@ -132,15 +166,16 @@
 
             let time = document.getElementById("time").value;
             if (time <= 3) {
-                document.getElementById("t").innerHTML = time + "  " + ":" + "time";
+                document.getElementById("t").innerHTML = time;
 
             } else if (time > 3) {
                 alert("time input wrong")
                 return false;
             }
 
-            document.getElementById("Day").innerHTML = day + "  " + ":" + "Day";
-            document.getElementById("name").innerHTML = pn + "  " + ":" + "name";
+            document.getElementById("Day").innerHTML = day;
+            document.getElementById("clan2").innerHTML = clan1;
+            document.getElementById("name").innerHTML = pn;
 
         }
     </script>
