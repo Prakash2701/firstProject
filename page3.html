@@ -44,11 +44,13 @@
             padding-bottom: 12px;
             text-align: left;
             font-size: 200%;
+            border: 1px solid;
         }
         
         .t {
-            border: 10px solid rgb(13, 11, 11);
+            border: 1px solid;
             padding: 8px;
+            text-align: center;
         }
     </style>
 </head>
@@ -84,59 +86,30 @@
     </div>
 
     <div class="div2">
-        <table align="center" border="0" class="t">
+        <table id="dataTable" class="t" align="center">
             <tr>
-                <th id="th1"></th>
-                <th id="th2"> </th>
-                <th id="th3"> </th>
-                <th id="th4"> </th>
-                <th id="th5"></th>
+                <th>Name</th>
+                <th>Town hall </th>
+                <th> WarStar</th>
+                <th>Attack </th>
+                <th>Time</th>
             </tr>
-            <tr>
-                <td>
-                    <p id="name"></p>
-                </td>
-                <td>
-                    <p id="town"></p>
-                </td>
-                <td>
-                    <p id="star"></p>
-                </td>
-                <td>
-                    <p id="attacks"></p>
-                </td>
-                <td>
-                    <p id="t"></p>
-                </td>
-            </tr>
+
         </table>
     </div>
     <div class="div3" id="mainDiv">
         <p></p>
     </div>
     <script>
-        // let counter = 1;
-        // let inp;
-
-        /*function add() {
-             counter++;
-              inp = counter + ": <p id = 'num" + counter + "'> </p> </br>";
-              document.getElementById("mainDiv").innerHTML =
-                  document.getElementById("mainDiv").innerHTML + inp;
-          }*/
-
         function clanwar() {
-            document.getElementById("th1").innerHTML = "Name";
-            document.getElementById("th2").innerHTML = "Town hall";
-            document.getElementById("th3").innerHTML = "WarStar";
-            document.getElementById("th4").innerHTML = "Attack";
-            document.getElementById("th5").innerHTML = "Time";
+
             let pn = document.getElementById("pn").value;
             let th = document.getElementById("th").value;
             let time = document.getElementById("time").value;
-
+            let rowText = "<tr>  <td> <p class='t'> ";
+            rowText = rowText + pn + " </p>  </td> <td> <p class='t'> ";
             if (th <= 15 && th > 0) {
-                document.getElementById("town").innerHTML = th;
+                rowText = rowText + th + " </p>  </td> <td> <p class='t'> ";
             } else if (th > 15) {
                 alert("town hall not available");
                 return false;
@@ -144,7 +117,7 @@
             let ws = parseInt(document.getElementById("ws").value);
 
             if (ws <= 3) {
-                document.getElementById("star").innerHTML = ws;
+                rowText = rowText + ws + " </p>  </td> <td> <p class='t'> ";
             } else if (ws > 3) {
                 alert("Star input Wrong");
                 return false;
@@ -152,20 +125,14 @@
 
             let attack = parseFloat(document.getElementById("attack").value);
             if (attack <= 100) {
-                document.getElementById("attacks").innerHTML = attack;
+                rowText = rowText + attack + " </p>  </td> <td> <p class='t'> ";
             } else if (attack > 100) {
                 alert("Attack input Wrong");
                 return false;
             }
+            rowText = rowText + time + " </p>  </td> </tr> ";
+            document.getElementById('dataTable').innerHTML = document.getElementById('dataTable').innerHTML + rowText;
 
-            document.getElementById("name").innerHTML = pn;
-            document.getElementById("t").innerHTML = time;
-            //console.log(counter);
-            //for (let i = 1; i <= counter; i++) {
-            //    document.getElementById('num' + i).innerHTML = th;
-
-            // alert(i);
-            // }
         }
     </script>
 </body>
