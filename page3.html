@@ -2,10 +2,10 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Clan War</title>
-    <h1 style="text-align: center">Clans War</h1>
+    <h1 style="text-align:center">Clans War</h1>
     <style>
         input {
             width: 90%;
@@ -16,7 +16,7 @@
         }
         
         label {
-            color: rgb(15, 12, 12);
+            color: rgb(28, 15, 15);
             text-shadow: #44096e;
             font-size: 150%;
         }
@@ -27,8 +27,9 @@
         }
         
         .div2 {
-            height: 40%;
+            height: 20%;
             min-height: 35%;
+            text-align: center;
             margin-top: 10%;
         }
         
@@ -39,6 +40,12 @@
             margin-top: 3%;
         }
         
+        .t {
+            border: 2px solid;
+            padding: 8px;
+            text-align: center;
+        }
+        
         th {
             padding-top: 12px;
             padding-bottom: 12px;
@@ -46,95 +53,124 @@
             font-size: 200%;
             border: 2px solid;
         }
-        
-        .t {
-            border: 2px solid;
-            padding: 8px;
-            text-align: center;
-        }
     </style>
 </head>
 
-<body style="background-color: rgb(228, 221, 221)">
+<body style="background-color:rgb(228, 221, 221) ;">
     <div class="div1">
         <table align="center">
             <tr>
+                <td><label>Day :</label></td>
+                <td><input type="number" id="day"></td>
+            </tr>
+            <tr>
+                <td><label>Clan name or number :</label></td>
+                <td><input type="text" id="clan1"></td>
+            </tr>
+            <tr>
                 <td><label>player number or name :</label></td>
-                <td><input type="text" id="pn" /></td>
+                <td><input type="text" id="pn"></td>
             </tr>
             <tr>
                 <td><label>Town Hall (Level) :</label></td>
-                <td><input type="number" id="th" /></td>
+                <td><input type="number" id="th"></td>
             </tr>
             <tr>
-                <td><label>War stars :</label></td>
-                <td><input type="number" id="ws" /></td>
+                <td><label>War stars :</label> </td>
+                <td> <input type="number" id="ws"></td>
+
             </tr>
             <tr>
                 <td><label>Attack percentage :</label></td>
-                <td><input type="number" id="attack" /></td>
+                <td><input type="number" id="attack"></td>
             </tr>
             <tr>
                 <td><label>Attack time : </label></td>
-                <td><input type="number" id="time" /></td>
+                <td><input type="number" id="time"></td>
             </tr>
             <tr>
                 <td></td>
-                <td><button type="button" onclick="clanwar()">Submit</button></td>
+                <td><button type="button" onclick="clan()">Submit</button> </td>
             </tr>
         </table>
     </div>
-
     <div class="div2">
-        <table id="dataTable" class="t" align="center">
+        <table id="table" class="t" align="center">
+
             <tr>
-                <th>Name</th>
-                <th>Town hall </th>
-                <th> WarStar</th>
-                <th>Attack </th>
-                <th>Time</th>
+                <th>Day :</th>
+                <th>Clan Name :</th>
+                <th>Name :</th>
+                <th>Town hall :</th>
+                <th>WarStar :</th>
+                <th> Attack :</th>
+                <th>Time </th>
             </tr>
 
         </table>
     </div>
-    <div class="div3" id="mainDiv">
+    <div class="div3">
+        <p></p>
+        <p></p>
         <p></p>
     </div>
     <script>
-        function clanwar() {
+        function clan() {
 
+            let day = document.getElementById("day").value;
             let pn = document.getElementById("pn").value;
+            let clan1 = document.getElementById("clan1").value;
+            let rowText = "<tr>  <td> <p class= 't'> ";
+
+            rowText = rowText + day + " </p>  </td> <td> <p class = 't'> ";
+            rowText = rowText + clan1 + " </p>  </td> <td> <p class= 't'> ";
+            rowText = rowText + pn + " </p>  </td> <td> <p class= 't'> ";
+
+
             let th = document.getElementById("th").value;
-            let time = document.getElementById("time").value;
-            let rowText = "<tr>  <td> <p class='t'> ";
-            rowText = rowText + pn + " </p>  </td> <td> <p class='t'> ";
+
             if (th <= 15 && th > 0) {
-                rowText = rowText + th + " </p>  </td> <td> <p class='t'> ";
+                rowText = rowText + th + " </p>  </td> <td> <p class= 't'> ";
             } else if (th > 15) {
-                alert("town hall not available");
+                alert("Town hall Not")
                 return false;
             }
-            let ws = parseInt(document.getElementById("ws").value);
+
+            let ws = document.getElementById("ws").value;
 
             if (ws <= 3) {
-                rowText = rowText + ws + " </p>  </td> <td> <p class='t'> ";
+                rowText = rowText + ws + " </p>  </td> <td> <p class= 't'> ";
             } else if (ws > 3) {
-                alert("Star input Wrong");
+                alert("Star input Wrong")
                 return false;
             }
 
             let attack = parseFloat(document.getElementById("attack").value);
+
+
             if (attack <= 100) {
-                rowText = rowText + attack + " </p>  </td> <td> <p class='t'> ";
+                rowText = rowText + attack + " </p>  </td> <td> <p class= 't'> ";
             } else if (attack > 100) {
-                alert("Attack input Wrong");
+                alert("Attack input Wrong")
                 return false;
             }
-            rowText = rowText + time + " </p>  </td> </tr> ";
-            document.getElementById('dataTable').innerHTML = document.getElementById('dataTable').innerHTML + rowText;
+
+            let time = document.getElementById("time").value;
+            if (time <= 3) {
+                rowText = rowText + time + " </p>  </td> <td> <p> ";
+
+            } else if (time > 3) {
+                alert("time input wrong")
+                return false;
+            }
+
+
+            document.getElementById("table").innerHTML = document.getElementById("table").innerHTML + rowText;
 
         }
     </script>
+
+
 </body>
 
 </html>
