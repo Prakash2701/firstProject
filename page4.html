@@ -41,6 +41,7 @@
         }
         
         .t {
+            margin-top: 2%;
             border: 2px solid;
             padding: 8px;
             text-align: center;
@@ -108,13 +109,33 @@
             </tr>
 
         </table>
+        <table class="t" align="center">
+            <tr>
+                <th>
+                    Total Attack
+                </th>
+                <th>Total WarStar</th>
+            </tr>
+            <tr>
+
+                <td>
+                    <P id="total1" class="t"></P>
+                </td>
+                <td>
+                    <P id="total2" class="t"></P>
+                </td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="total()" style="margin-left: 90%;">Total</button></td>
+            </tr>
+        </table>
     </div>
-    <div class="div3">
-        <p></p>
-        <p></p>
-        <p></p>
-    </div>
+
     <script>
+        let p = 0;
+        let sum = 0;
+        let sum1 = 0;
+
         function clan() {
 
             let day = document.getElementById("day").value;
@@ -136,9 +157,10 @@
                 return false;
             }
 
-            let ws = document.getElementById("ws").value;
+            let ws = parseFloat(document.getElementById("ws").value);
 
             if (ws <= 3) {
+                sum1 = sum1 + ws;
                 rowText = rowText + ws + " </p>  </td> <td> <p class= 't'> ";
             } else if (ws > 3) {
                 alert("Star input Wrong")
@@ -150,6 +172,7 @@
 
             if (attack <= 100) {
                 rowText = rowText + attack + " </p>  </td> <td> <p class= 't'> ";
+                sum = sum + attack;
             } else if (attack > 100) {
                 alert("Attack input Wrong")
                 return false;
@@ -167,6 +190,13 @@
 
             document.getElementById("table").innerHTML = document.getElementById("table").innerHTML + rowText;
 
+        }
+
+        function total() {
+
+            console.log(sum);
+            document.getElementById("total1").innerHTML = sum;
+            document.getElementById("total2").innerHTML = sum1;
         }
     </script>
 
