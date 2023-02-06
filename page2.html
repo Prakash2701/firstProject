@@ -19,16 +19,15 @@
         .div1 {
             height: 60%;
             margin-top: 2%;
-            color: rgb(205, 172, 172);
+            color: rgb(24, 18, 18);
             text-shadow: #44096e;
             font-size: 150%;
             width: 100%;
-            text-align: center;
         }
     </style>
 </head>
 
-<body style="background-color:#333 ;">
+<body style="background-color:rgb(228, 221, 221) ;">
     <div style="height: 40%;">
         <form>
             <div>
@@ -54,10 +53,13 @@
                             <td><input type="number" placeholder="time" id="input3"></td>
 
                         </tr>
-
+                        <tr>
+                            <td></td>
+                            <td> <button type="button" onclick="war()">Submit</button></td>
+                        </tr>
 
                     </table>
-                    <button type="button" onclick="war()">Submit</button>
+
                 </div>
 
 
@@ -65,12 +67,12 @@
             </div>
         </form>
     </div>
-    <div style="border-style:solid ; height:40% ; min-height: 35%; text-align: center;margin-top: 10%">
+    <div style=" height:40% ; min-height: 35%; text-align: center;margin-top: 10%">
         <img id="star" height="30" src="">
         <img id="star2" height="30" src="">
         <img id="star3" height="30" src="">
-        <p id="attack" style="font-size: 150%; color: rgb(197, 184, 184); text-shadow: bisque;"></p>
-        <p id="time" style="font-size: 150%; color: rgb(197, 184, 184); text-shadow: bisque;"></p>
+        <p id="attack" style="font-size: 150%; color: rgb(226, 17, 17); text-shadow: bisque;"></p>
+        <p id="time" style="font-size: 150%; color: rgb(227, 15, 15); text-shadow: bisque;"></p>
     </div>
 
     <script>
@@ -113,7 +115,9 @@
                 document.getElementById("star3").src = "./star.png";
                 document.getElementById("attack").innerHTML = input2 = 100;
             } else {
-                alert("min 1 and max 3")
+
+                alert("min 1 and max 3");
+                return false;
             }
 
             document.getElementById("attack").innerHTML = input2 + "  " + "%";
