@@ -60,14 +60,7 @@
 <body style="background-color:rgb(228, 221, 221) ;">
     <div class="div1">
         <table align="center">
-            <tr>
-                <td><label>Day :</label></td>
-                <td><input type="number" id="day"></td>
-            </tr>
-            <tr>
-                <td><label>Clan name or number :</label></td>
-                <td><input type="text" id="clan1"></td>
-            </tr>
+
             <tr>
                 <td><label>player number or name :</label></td>
                 <td><input type="text" id="pn"></td>
@@ -99,8 +92,7 @@
         <table id="table" class="t" align="center">
 
             <tr>
-                <th>Day :</th>
-                <th>Clan Name :</th>
+
                 <th>Name :</th>
                 <th>Town hall :</th>
                 <th>WarStar :</th>
@@ -138,13 +130,12 @@
 
         function clan() {
 
-            let day = document.getElementById("day").value;
+
             let pn = document.getElementById("pn").value;
-            let clan1 = document.getElementById("clan1").value;
+
             let rowText = "<tr>  <td> <p class= 't'> ";
 
-            rowText = rowText + day + " </p>  </td> <td> <p class = 't'> ";
-            rowText = rowText + clan1 + " </p>  </td> <td> <p class= 't'> ";
+
             rowText = rowText + pn + " </p>  </td> <td> <p class= 't'> ";
 
 
